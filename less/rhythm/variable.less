@@ -1,0 +1,91 @@
+
+@import 'font-face.less';
+
+/* Typography
+   ========================================================================== */
+
+@font-family-sans-serif: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, 'Rhythm Heiti', sans-serif;
+@font-family-serif: 'Rhythm Italic Serif', 'Rhythm Songti', serif;
+@font-family-cursive: 'Rhythm Italic Serif', Georgia, 'Times New Roman', 'Rhythm Cursive', serif;
+@font-family-monospace: Menlo, Courier, monospace, monospace, sans-serif;
+
+@font-size-base: 16px;
+@font-size-large: @font-size-base * 1.125; // 18px
+@font-size-small: @font-size-base * 0.875; // 14px
+@font-size-smaller: @font-size-base * 0.75; // 12px
+
+@font-size-h1: @font-size-base * 2;    // 32px
+@font-size-h2: @font-size-base * 1.75; // 28px
+@font-size-h3: @font-size-base * 1.5;  // 24px
+@font-size-h4: @font-size-base * 1.25; // 20px
+@font-size-h5: @font-size-base;
+@font-size-h6: @font-size-base;
+
+@mobile-font-size-base: 12px;
+
+@mobile-font-size-h1: @mobile-font-size-base * 2;    // 24px
+@mobile-font-size-h2: @mobile-font-size-base * 1.75; // 21px
+@mobile-font-size-h3: @mobile-font-size-base * 1.5;  // 18px
+@mobile-font-size-h4: @mobile-font-size-base * 1.25; // 15px
+@mobile-font-size-h5: @mobile-font-size-base;
+@mobile-font-size-h6: @mobile-font-size-base;
+
+@line-height-base: 1.3em;
+@line-height-article: 1.7em;
+
+@indent: 2em;
+
+/* Color
+   ========================================================================== */
+
+@rhythm-grey-base: #9e9e9e;
+@rhythm-grey-darker: #757575;
+@rhythm-grey-dark: #616161;
+@rhythm-grey-light: #bdbdbd;
+@rhythm-grey-lighter: #e0e0e0;
+@rhythm-grey-100: #f5f5f5;
+
+@rhythm-black-base: #000;
+@rhythm-black-dark: lighten(@rhythm-black-base, 13.5%); // #222
+@rhythm-black-light: lighten(@rhythm-black-base, 20%);   // #333
+
+@rhythm-red-base: #f44336;
+@rhythm-red-dark: #d32f2f;
+@rhythm-red-light: #e57373;
+
+@rhythm-blue-base: #2196f3;
+@rhythm-blue-dark: #1976d2;
+@rhythm-blue-light: #64b5f6;
+
+@color-body: #fff;
+@color-heading: @rhythm-black-dark;
+@color-text: @rhythm-black-light;
+
+@color-link: @rhythm-blue-light;
+@color-link-hover: @rhythm-blue-base;
+@color-link-active: @rhythm-blue-dark;
+
+@color-code: @rhythm-red-light;
+@color-code-border: @rhythm-grey-lighter;
+@color-code-bg: #fff;
+
+@color-blockquote-border: @rhythm-grey-lighter;
+
+@color-table-border: @rhythm-grey-lighter;
+@color-table-th-bg: @rhythm-grey-100;
+@color-table-td-bg: #fff;
+
+@color-hr: @rhythm-grey-lighter;
+@color-figcaption: @rhythm-grey-light;
+
+/* Space
+   ========================================================================== */
+
+@rhythm-headding-top: 1.2em;
+@rhythm-headding-bottom: .4em;
+@rhythm-text-bottom: 1em;
+
+/* Support
+   ========================================================================== */
+
+@support-em: false;

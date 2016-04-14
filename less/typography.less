@@ -1,0 +1,58 @@
+//
+// Typography
+// --------------------------------------------------
+
+body {
+  font-family: @font-family-base;
+  background-color: @bg-color;
+}
+
+/* ==========================================================================
+   Headings
+ ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1em;
+  margin-bottom: .5em;
+  font-weight: 500;
+
+  & ~ p {
+    margin-top: 10px;
+  }
+}
+
+h1 { font-size: @font-size-title-xl; }
+h2 { font-size: @font-size-title-l; }
+h3 { font-size: @font-size-title-m; }
+h4 { font-size: @font-size-title-s; }
+h5 { font-size: @font-size-title-xs; }
+h6 { font-size: @font-size-title-xs; }
+
+@media (max-width: @screen-sm) {
+  h1 { font-size: @font-size-title-s; }
+  h5 { font-size: @font-size-text-xs; }
+  h6 { font-size: @font-size-text-xs; }
+}
+/* ==========================================================================
+   Body text
+ ============================================================================ */
+
+p {
+  font-size: @font-size-text-m;
+  font-weight: 500;
+  color: @text-color;
+
+  &.content {
+    line-height: 1.5;
+    margin: 1em 0;
+  }
+
+  a,
+  a:visited {
+    color: @link-color;
+    //link within h1~h6, p, span, div, strong, etc
+    &.link-txt {
+      color: inherit;
+    }
+  }
+}

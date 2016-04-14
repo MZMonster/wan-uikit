@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Mixins: Color
+ ============================================================================ */
+
+
+// 获取衍生色
+
+.get-color-dark(@color, @level: 1) {
+  @color-dark: hardlight(@color, fade(black, @level * 20%))
+}
+
+.get-color-light(@color, @level: 1) {
+  @color-light: hardlight(@color, fade(white, @level * 20%))
+}
+
+.get-color-pressed(@color, @level: 1) {
+  @color-pressed: hardlight(@color, fade(black, @level * 5%))
+}
+
+.get-color-hover(@color, @level: 1) {
+  @color-hover: hardlight(@color, fade(white, @level * 5%))
+}

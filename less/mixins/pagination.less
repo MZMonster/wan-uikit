@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Pagination --module
+ ============================================================================ */
+.pagination {
+  text-align: center;
+  padding-bottom: 40px;
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    .button-size(40px,40px,12px,3px);
+    .button-variant(rgba(0,0,0,.3),rgba(0,0,0,.1),transparent);
+    &.active {
+      background-color: #f44336;
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+    &.disabled {
+      display: none !important;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      font-size: 14px;
+      color: inherit;
+      line-height: inherit;
+      &:hover {
+        color: inherit;
+      }
+    }
+    &:hover {
+      color: rgba(0,0,0,.5);
+    }
+
+    &.next,
+    &.prev {
+      .icon-return-top {
+        display: inline-block;
+      }
+    }
+
+    &.prev {
+      .icon-return-top {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &.next {
+      .icon-return-top {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @break-point-width) {
+  .pagination {
+    padding-bottom: 0;
+    margin: 30px 0;
+
+    li {
+      display: none;
+
+      &.prev,
+      &.next {
+        display: inline-block;
+        width: 100px;
+      }
+    }
+  }
+}

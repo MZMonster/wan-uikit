@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Mixins: Components/Form
+ ============================================================================ */
+
+.form-group(@margin-bottom: 28px) {
+  margin-bottom: @margin-bottom;
+}
+
+.form-control-variant(@color; @background-color; @border-color) {
+  color: @color;
+  background-color: @background-color;
+  border: 1px solid @border-color;
+}
+
+.form-control-size(@width; @height; @padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  width: @width;
+  height: @height;
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+
+  &select {
+    height: @height;
+    line-height: @height;
+  }
+
+  &textarea,
+  &select[multiple] {
+    height: auto;
+  }
+}
+
+.form-group.last {
+  margin-bottom: 0;
+}
+
+.form-control {
+  display: block;
+  background-image: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+
+  .placeholder(#999);
+}

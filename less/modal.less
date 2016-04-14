@@ -1,0 +1,71 @@
+//
+// Modal
+// --------------------------------------------------
+
+.mw-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 330px;
+  margin-top: -73px;
+  margin-left: -165px;
+  background-color: #fff;
+  z-index: 9999;
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all ease .3s;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);;
+  }
+
+  .info {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    padding: 0 20px;
+
+    p {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.3;
+      color: @gray-darker;
+    }
+  }
+
+  button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    background-color: #fff;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.cancel,
+    &.confirm {
+      width: 50%;
+      display: inline-block;
+      height: 46px;
+      line-height: 46px;
+      text-align: center;
+    }
+
+    &.cancel {
+      border-top: 1px solid @gray-light;
+      border-right: 1px solid @gray-light;
+      color: @gray;
+    }
+
+    &.confirm {
+      border-top: 1px solid @gray-light;
+      color: @red;
+    }
+  }
+}

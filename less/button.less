@@ -1,0 +1,109 @@
+//
+// Buttons
+// --------------------------------------------------
+
+/* ==========================================================================
+   Button sizes
+ ============================================================================ */
+.button {
+  .button-size(@height-base);
+
+  display: inline-block;
+  padding: 0 2em;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition-duration: @time-fast;
+  transition-property: color, border-color, background-color;
+
+  @media (max-width: @screen-sm) {
+   .button-size(@height-base-mobile; 16px);
+  }
+
+  a& {
+    text-decoration: none;
+  }
+
+  input&,
+  button& {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+
+  &-m {
+    &:extend(.button);
+  }
+
+  &-s {
+    &:extend(.button);
+    .button-size(32px);
+
+    @media (max-width: @screen-sm) {
+      .button-size(36px);
+    }
+  }
+}
+
+/* ==========================================================================
+   Button variants
+ ============================================================================ */
+
+.button-primary {
+  .mw-button-variant();
+}
+
+.button-normal {
+  .mw-button-variant(#f4f4f4; #666; #ccc);
+
+  &:hover,
+  &:focus {
+    .get-color-hover(@red); // -> @color-hover
+    color: @color-hover;
+    border-color: @color-hover;
+    background-color: white;
+  }
+
+  &:active {
+    .get-color-pressed(@red); // -> @color-pressed
+    color: @color-pressed;
+    border-color: @color-pressed;
+    background-color: white;
+  }
+}
+
+.button-ghost {
+  .mw-button-variant(#fff; #666; #ccc);
+
+  &:hover,
+  &:focus {
+    .get-color-hover(@red); // -> @color-hover
+    color: @color-hover;
+    border-color: @color-hover;
+    background-color: white;
+  }
+
+  &:active {
+    .get-color-pressed(@red); // -> @color-pressed
+    color: @color-pressed;
+    border-color: @color-pressed;
+    background-color: white;
+  }
+}
+
+.button-disabled {
+  .button-variant(#f4f4f4; #ccc);
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}

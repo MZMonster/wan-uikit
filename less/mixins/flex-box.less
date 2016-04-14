@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Mixins: Components/Flex Box
+ ============================================================================ */
+
+.flex-container(@flow: row wrap, @justify: space-between) {
+  display: flex;
+  flex-flow: @flow;
+  justify-content: @justify;
+}
+
+.round-box(@radius: 3px, @bgColor: #fff) {
+  border-radius: @radius;
+  overflow: hidden;
+  background-color: @bgColor;
+}
+
+.flex-container {
+  .flex-container();
+}
+
+.flex-item {
+  display: inline-block;
+}
+
+.round-box {
+  .round-box();
+}
+
+.visible-min {
+  .responsive-invisibility();
+}
+
+@media screen and (max-width: @break-point-width) {
+  .flex-container {
+    .flex-container(@flow:column);
+  }
+
+  .container {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: @item-horizontal-gap @item-horizontal-gap 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .flex-item {
+    width: 100% !important;
+    margin: 0 0 @item-vertical-gap 0 !important;
+  }
+
+  .hidden-min {
+    .responsive-invisibility()
+  }
+
+  .visible-min {
+    .responsive-visibility()
+  }
+}

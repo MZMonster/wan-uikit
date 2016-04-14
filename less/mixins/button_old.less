@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Component: Button
+ ============================================================================ */
+.btn {
+  display: inline-block;
+  padding: 0;
+  border: 1px solid transparent;
+  margin-bottom: 0; // For input.btn
+  text-align: center;
+  vertical-align: middle;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  touch-action: manipulation;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+  }
+}
+
+.btn(@color:#fff, @display:inline-block) {
+  display: @display;
+  width: 120px;
+  height: 40px;
+  border: 1px solid @color;
+  border-radius: 20px;
+  color: @color;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  &:hover {
+    border-color: lighten(@color, 2%);
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-large(@color, @display:inline-block) {
+  display: @display;
+  width: 158px;
+  height: 48px;
+  border: 1px solid @color;
+  border-radius: 24px;
+  color: @color;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 48px;
+  text-align: center;
+  &:hover {
+    border-color: lighten(@color, 2%);
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.button-variant(@color; @background-color; @border-color:transparent) {
+  color: @color;
+  background-color: @background-color;
+  border: 1px solid @border-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: @color;
+    background-color: darken(@background-color, 2%);
+  }
+
+  &:active {
+    background-image: none;
+  }
+}
+
+.button-size(@width; @height; @font-size; @border-radius:0) {
+  width: @width;
+  height: @height;
+  border-radius: @border-radius;
+  font-size: @font-size;
+  line-height: @height;
+  text-align: center;
+}

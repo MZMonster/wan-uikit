@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Mixins: Layout
+ ============================================================================ */
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.center-block(@margin-top: 0, @margin-bottom: 0) {
+  display: block;
+  margin: @margin-top auto @margin-bottom;
+}
+
+
+.img-responsive(@display: block) {
+  display: @display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+.embed-responsive(@ratio: 56.25%) {
+  position: relative;
+  display: block;
+  height: 0;
+  padding-bottom: @ratio;
+  overflow: hidden;
+
+  & iframe,
+  & embed,
+  & object,
+  & video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+  }
+}
+
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+}
+
+.responsive-visibility() {
+  display: block !important;
+  table&  { display: table; }
+  tr&     { display: table-row !important; }
+  th&,
+  td&     { display: table-cell !important; }
+}
+
+.responsive-invisibility() {
+  display: none !important;
+}
+
+.img-center() {
+  position: absolute;
+  top: -100%;
+  right: -100%;
+  bottom: -100%;
+  left: -100%;
+  margin: auto;
+  width: 100%;
+  min-height: 100%;
+}
